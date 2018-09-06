@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--使用模板引擎-->
+<script src="node_modules/art-template/lib/template-web.js"></script>
+<script id='test' type="text/template">
+    我今年{{age}}
+    我的名字是{{name}}
+    我来自{{province}}
+    我的爱好是{{each love}}
+        {{$value}}
+
+    {{/each}}
+
+
+
+</script>
+<script>
+
+    let result = template('test',{
+        age:22,
+        name:tom,
+        province:上海市,
+        value:[
+            唱歌,打游戏,写代码
+        ]
+
+    })
+    console.log(result);
+
+
+</script>
+</body>
+</html>
